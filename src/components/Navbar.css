@@ -1,0 +1,364 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 76px;
+
+  z-index: 1000;
+
+  background:
+    rgba(5, 8, 22, 0.86);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.nav-container {
+  width:
+    min(
+      1240px,
+      calc(100% - 50px)
+    );
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.nav-logo {
+  flex-shrink: 0;
+
+  color: transparent;
+
+  font-size: 1.02rem;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #60a5fa,
+      #a78bfa,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(34, 211, 238, 0.12)
+    );
+
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: translateY(-1px);
+
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(34, 211, 238, 0.3)
+    );
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.nav-links {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 27px 0 25px;
+
+  color: #94a3b8;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 13px;
+
+  width: 0;
+  height: 2px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #60a5fa,
+      #a78bfa
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(34, 211, 238, 0.55);
+
+  transition:
+    width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  width: 100%;
+}
+
+.nav-link-active {
+  color: #22d3ee;
+}
+
+/* =========================================================
+   HIRE ME
+========================================================= */
+
+.hire-btn {
+  position: relative;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 16px;
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.45);
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.13),
+      rgba(96, 165, 250, 0.12),
+      rgba(167, 139, 250, 0.14)
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(34, 211, 238, 0.07);
+
+  text-decoration: none;
+
+  font-size: 0.73rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hire-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  z-index: -1;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #60a5fa,
+      #a78bfa,
+      #ec4899
+    );
+
+  opacity: 0;
+
+  filter: blur(8px);
+
+  transition:
+    opacity 0.3s ease;
+}
+
+.hire-btn:hover {
+  transform:
+    translateY(-2px)
+    scale(1.02);
+
+  border-color:
+    rgba(34, 211, 238, 0.8);
+
+  box-shadow:
+    0 10px 30px
+    rgba(34, 211, 238, 0.16);
+}
+
+.hire-btn:hover::before {
+  opacity: 0.45;
+}
+
+.hire-emoji {
+  font-size: 0.95rem;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(255, 255, 255, 0.3)
+    );
+}
+
+.hire-btn svg {
+  font-size: 0.78rem;
+
+  color: #67e8f9;
+}
+
+/* =========================================================
+   SCROLL OFFSET
+========================================================= */
+
+section[id] {
+  scroll-margin-top: 82px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .nav-container {
+    width:
+      min(
+        calc(100% - 32px),
+        1000px
+      );
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+  }
+
+  .hire-btn {
+    padding:
+      8px 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .navbar {
+    height: 65px;
+  }
+
+  .nav-container {
+    width:
+      calc(100% - 24px);
+
+    gap: 12px;
+  }
+
+  .nav-logo {
+    font-size: 0.82rem;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+
+    gap: 13px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    padding:
+      24px 0 22px;
+
+    font-size: 0.58rem;
+  }
+
+  .nav-link::after {
+    bottom: 10px;
+  }
+
+  .hire-btn {
+    display: none;
+  }
+}
